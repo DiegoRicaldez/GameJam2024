@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxLife = 3;
+    public int maxLife = 5;
     public int life = 0;
 
     public float speed = 5f;
@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
 
         if ( life <= 0 )
         {
+            //GameOver
 
         }
     }
@@ -110,6 +111,10 @@ public class Player : MonoBehaviour
                     fl.activated = true;
                     pathGenerator.Advance();
                 }
+            }
+            else if (other.gameObject.CompareTag("BackWall"))
+            {
+                TakeDamage(999);
             }
         }
     }

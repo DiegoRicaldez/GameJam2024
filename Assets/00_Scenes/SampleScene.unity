@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5153eb4068d019743af4b73f29dc1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 3
+  maxLife: 5
   life: 0
   speed: 5
   speedIncrease: 0.5
@@ -712,7 +712,7 @@ MonoBehaviour:
   - {fileID: 5027305456701468838, guid: 31135d7650404ad4e897d2645cf10584, type: 3}
   - {fileID: 5027305456701468838, guid: a7e4ea8968d72664ea72ce4075917d5c, type: 3}
   - {fileID: 5027305456701468838, guid: 360622e2bf18ce748a41b94c169f6a00, type: 3}
-  backWall: {fileID: 3449630142067216454, guid: f8a7b0ffa3aba434ca8776e683333d3f, type: 3}
+  backWall: {fileID: 3628028830423486981, guid: f1081a66c80b7bc4d9976fecca9a1912, type: 3}
   nextPathPosition: {x: 0, y: 0, z: 0}
   nextWallPosition: {x: -10, y: 5.5, z: 0}
   distancia: 20

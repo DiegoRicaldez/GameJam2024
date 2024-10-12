@@ -20,7 +20,7 @@ public class PathGenerator : MonoBehaviour
 
     void Start()
     {
-        Instantiate(backWall, new Vector3(0, nextWallPosition.y, startPoint.position.z), Quaternion.identity);
+        Instantiate(backWall, new Vector3(0, 0, startPoint.position.z), Quaternion.identity);
 
         actualPaths = new Queue<GameObject>();
         actualWalls = new Queue<GameObject>();
