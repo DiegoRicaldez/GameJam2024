@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     public int maxLife = 5;
     public int life = 0;
-
+    
     public float speed = 5f;
     public float speedIncrease = 0.5f;
     private Vector3 vectorVertical = Vector3.forward;
@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     private int anteriorR = 0, r = 0;
     public Rigidbody rb;
 
-    private PathGenerator pathGenerator;
+	public Animator animator;
+
+	private PathGenerator pathGenerator;
     
     void Start()
     {
@@ -31,7 +33,15 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Vertical");
         float z = Input.GetAxis("Horizontal");
 
-        rb.velocity = vectorVertical * speed * z
+        if(x> 0 || x<0  || z> 0 || z <0) 
+        {
+            animator.SetBool("isMove", true);
+        }
+        else 
+        {
+			animator.SetBool("isMove", false);
+		}
+		rb.velocity = vectorVertical * speed * z
             + vectorHorizontal * speed * x;
     }
 
@@ -96,6 +106,7 @@ public class Player : MonoBehaviour
         {
             //GameOver
 
+            animator.SetBool("isDead",true);
         }
     }
 
