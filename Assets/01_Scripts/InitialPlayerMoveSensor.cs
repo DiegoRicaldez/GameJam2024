@@ -19,6 +19,7 @@ public class InitialPlayerMoveSensor : MonoBehaviour
         if (player.transform.position != playerStart)
         {
             FindObjectOfType<backWall>().canMove = true;
+            FindObjectOfType<ObjectGenerator>().canSpawn = true;
             Destroy(gameObject);
         }
     }
