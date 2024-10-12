@@ -33,16 +33,16 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Vertical");
         float z = Input.GetAxis("Horizontal");
 
-        if(x> 0 || x<0  || z> 0 || z <0) 
+        if(x> 0 || x<0  || z> 0 || z <0) animator.SetBool("isMove", true);
+        else animator.SetBool("isMove", false);
+
+        Vector3 direccionMovimiento = vectorVertical * z + vectorHorizontal * x;
+        rb.velocity = direccionMovimiento * speed;
+
+        if (direccionMovimiento != Vector3.zero)
         {
-            animator.SetBool("isMove", true);
+            transform.rotation = Quaternion.LookRotation(direccionMovimiento);
         }
-        else 
-        {
-			animator.SetBool("isMove", false);
-		}
-		rb.velocity = vectorVertical * speed * z
-            + vectorHorizontal * speed * x;
     }
 
     public void ChangeOrientation()
@@ -136,7 +136,6 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Object"))
             {
-                Debug.Log($"objeto: {collision.gameObject.GetType()}");
                 Objects obj = collision.gameObject.GetComponent<Objects>();
 
                 switch (obj.type)

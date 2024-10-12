@@ -233,6 +233,7 @@ MonoBehaviour:
   - {fileID: 724651643155412485, guid: 3c65b9f7571631e41b95bec92500f7a3, type: 3}
   - {fileID: 8710596560868387266, guid: 0c932f2fe1a0d2542b73b61847e8f98a, type: 3}
   - {fileID: 6343740885343635143, guid: 14db3ccc1d3d31645959455e7e105b31, type: 3}
+  - {fileID: -2694539342693747293, guid: ed41ffd5e17c5814f8b90d31d03fda39, type: 3}
   BottomLeft: {fileID: 125242403}
   TopRight: {fileID: 15605361}
   SpawnTime: 5

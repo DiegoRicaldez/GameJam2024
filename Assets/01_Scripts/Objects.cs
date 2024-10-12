@@ -24,5 +24,6 @@ public enum ObjectType
 {
     cheese,
     chili,
-    poison
+    poison,
+    obstacle
 }
