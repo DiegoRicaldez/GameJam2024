@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 1880603515}
   m_Layer: 0
   m_Name: PathManager
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,6 +703,15 @@ MonoBehaviour:
   WallPrefabs:
   - {fileID: 5027305456701468838, guid: 976de20c6c205f04cb8803e26783a91b, type: 3}
   - {fileID: 5027305456701468838, guid: 22b5a4a6aab2370448b78efb10b49fd8, type: 3}
+  - {fileID: 5027305456701468838, guid: beca9247ff4c3094e8a62f575c7fe244, type: 3}
+  - {fileID: 5027305456701468838, guid: f524384f020aa3e4c8a7a153f5bbdad0, type: 3}
+  - {fileID: 5027305456701468838, guid: 4c3405c901319c4478f056d44f310efb, type: 3}
+  - {fileID: 5027305456701468838, guid: 719ea9a47fbb3f2439fa95b3587f832c, type: 3}
+  - {fileID: 5027305456701468838, guid: 0b0525c4de9094a4e975232123916c2d, type: 3}
+  - {fileID: 5027305456701468838, guid: 86f5f2c92762afa49a5ab0870f1abc9d, type: 3}
+  - {fileID: 5027305456701468838, guid: 31135d7650404ad4e897d2645cf10584, type: 3}
+  - {fileID: 5027305456701468838, guid: a7e4ea8968d72664ea72ce4075917d5c, type: 3}
+  - {fileID: 5027305456701468838, guid: 360622e2bf18ce748a41b94c169f6a00, type: 3}
   backWall: {fileID: 3449630142067216454, guid: f8a7b0ffa3aba434ca8776e683333d3f, type: 3}
   nextPathPosition: {x: 0, y: 0, z: 0}
   nextWallPosition: {x: -10, y: 5.5, z: 0}

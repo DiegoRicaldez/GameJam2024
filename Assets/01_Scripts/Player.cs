@@ -102,32 +102,7 @@ public class Player : MonoBehaviour
     {
         if (other != null)
         {
-            if (other.gameObject.CompareTag("Object"))
-            {
-                Debug.Log("objetos");
-                Objects obj = other.gameObject.GetComponent<Objects>();
-
-                switch (obj.type)
-                {
-                    case ObjectType.cheese:
-                        ChangeOrientation();
-                        break;
-                    case ObjectType.chili:
-                        ResetOrientation();
-                        TakeDamage(1);
-                        break;
-                    case ObjectType.poison:
-                        TakeDamage(-1);
-                        speed += speedIncrease;
-                        break;
-
-                    default:
-                        break;
-                }
-
-                Destroy(obj.gameObject);
-            }
-            else if (other.gameObject.CompareTag("Floor"))
+            if (other.gameObject.CompareTag("Floor"))
             {
                 Floor fl = other.gameObject.GetComponent<Floor>();
                 if (!fl.activated)
@@ -145,7 +120,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Object"))
             {
-                Debug.Log("objetos");
+                Debug.Log($"objeto: {collision.gameObject.GetType()}");
                 Objects obj = collision.gameObject.GetComponent<Objects>();
 
                 switch (obj.type)
