@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour
 {
-    private bool activated = false;
+    public bool activated = false;
 
     private void OnTriggerEnter(Collider other)
     {

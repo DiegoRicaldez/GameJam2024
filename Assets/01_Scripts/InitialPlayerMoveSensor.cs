@@ -6,12 +6,10 @@ public class InitialPlayerMoveSensor : MonoBehaviour
 {
     Player player;
     Vector3 playerStart;
-    backWall backWall;
 
     void Start()
     {
         player = FindObjectOfType<Player>();
-        backWall = FindObjectOfType<backWall>();
 
         playerStart = player.transform.position;
     }
@@ -20,8 +18,7 @@ public class InitialPlayerMoveSensor : MonoBehaviour
     {
         if (player.transform.position != playerStart)
         {
-            backWall.canMove = true;
-            Debug.Log("activado");
+            FindObjectOfType<backWall>().canMove = true;
             Destroy(gameObject);
         }
     }

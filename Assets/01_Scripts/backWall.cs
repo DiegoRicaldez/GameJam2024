@@ -24,14 +24,12 @@ public class backWall : MonoBehaviour
             if (player != null && player.transform.position.z - transform.position.z >= maxDistance)
             {
                 //rapido
-                rb.velocity = Vector3.forward * speed * player.speed;
-                Debug.Log("rapido");
+                rb.velocity = Vector3.forward * speed * player.speed / 2;
             }
             else
             {
                 //normal
                 rb.velocity = Vector3.forward * speed;
-                Debug.Log("normal");
             }
         }
     }
