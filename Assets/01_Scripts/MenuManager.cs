@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
             AudioManager.instance.StopMusic();
         }
     }
-
+    
     public void GoMainScene()
     {
         SceneManager.LoadScene(MainScene);
@@ -43,9 +43,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(GameOver);
     }
-    public void PauseGame()
+    public void PauseGame(bool si)
     {
-        if (Time.timeScale == 1f)
+        if (si)
         {
             Time.timeScale = 0f;
         }

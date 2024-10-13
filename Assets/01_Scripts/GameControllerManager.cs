@@ -9,7 +9,7 @@ public class GameControllerManager : MonoBehaviour
     public Image cordureImage;
     public Image pointsBar;
     public GameObject PauseMenu;
-    private bool paused = false;
+    public bool paused = false;
 
     public int TotalPoints = 30;
     public float points = 0;
@@ -20,8 +20,11 @@ public class GameControllerManager : MonoBehaviour
 
     void Start()
     {
+        paused = false;
         menuManager = FindObjectOfType<MenuManager>();
         PauseMenu.SetActive(false);
+        menuManager.PauseGame(false);
+
 
         AudioManager.instance.SetMusic(Music);
     }
@@ -33,14 +36,14 @@ public class GameControllerManager : MonoBehaviour
             Pausar();
         }
     }
-
+    
     public void Pausar()
     {
         paused = !paused;
-        menuManager.PauseGame();
+        menuManager.PauseGame(paused);
         PauseMenu.SetActive(paused);
     }
-
+    
     public void AddPoint()
     {
         points += 1;
