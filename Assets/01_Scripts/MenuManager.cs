@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public string MainScene = "MenuInicio";
+    public string video1Scene = "VideoInicio";
     public string Juego = "Juego";
     public string Win = "Win";
+    public string video2Scene = "VideoWin";
     public string GameOver = "GameOver";
 
     private void Start()
@@ -24,6 +26,10 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(MainScene);
 
     }
+    public void GoVideo1Scene()
+    {
+        SceneManager.LoadScene(video1Scene);
+    }
     public void GoJuegoScene()
     {
         SceneManager.LoadScene(Juego);
@@ -31,7 +37,7 @@ public class MenuManager : MonoBehaviour
     }
     public void GoWinScene()
     {
-        SceneManager.LoadScene(Win);
+        SceneManager.LoadScene(video2Scene);
     }
     public void GoGameOverScene()
     {

@@ -1237,10 +1237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainScene: MenuInicio
+  video1Scene: VideoInicio
   Juego: Juego
   Win: Win
+  video2Scene: VideoWin
   GameOver: GameOver
-  Music: {fileID: 8300000, guid: 08d07c2760171724e972ca23a13f9cdf, type: 3}
 --- !u!1 &1758514579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1661,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1734871056}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: GoJuegoScene
+        m_MethodName: GoVideo1Scene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
