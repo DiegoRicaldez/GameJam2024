@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -16,6 +17,13 @@ public class Player : MonoBehaviour
 
 	private PathGenerator pathGenerator;
     private GameControllerManager gcm;
+
+    public AudioClip BuffSound;
+    public AudioClip DebuffSound;
+    public AudioClip DeadSound;
+
+    public float deadTime = 3f;
+    private bool canMove = true;
     
     void Start()
     {
@@ -26,7 +34,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (canMove)
+            Move();
     }
 
     #region movimientos
@@ -111,8 +120,21 @@ public class Player : MonoBehaviour
 
         if ( life == 0 )
         {
-            animator.SetBool("isDead",true);
+            canMove = false;
+
+            AudioManager.instance.PlaySFX(DeadSound);
+            animator.SetBool("isDead", true);
+            FindObjectOfType<backWall>().canMove = false;
+            FindObjectOfType<ObjectGenerator>().canSpawn = false;
+            StartCoroutine(Morir());
         }
+    }
+
+    IEnumerator Morir()
+    {
+        yield return new WaitForSeconds(deadTime);
+
+        FindObjectOfType<MenuManager>().GoGameOverScene();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -149,15 +171,18 @@ public class Player : MonoBehaviour
                         ChangeOrientation();
                         TakeDamage(1);
                         gcm.ChangeCordureImage(true);
+                        AudioManager.instance.PlaySFX(DebuffSound);
                         break;
                     case ObjectType.chili:
                         ResetOrientation();
                         gcm.ChangeCordureImage(false);
                         speed += speedIncrease;
+                        AudioManager.instance.PlaySFX(BuffSound);
                         break;
                     case ObjectType.poison:
                         TakeDamage(-1);
                         gcm.AddPoint();
+                        AudioManager.instance.PlaySFX(BuffSound);
                         break;
 
                     default:

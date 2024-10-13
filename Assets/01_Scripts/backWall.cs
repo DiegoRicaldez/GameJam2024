@@ -32,5 +32,9 @@ public class backWall : MonoBehaviour
                 rb.velocity = Vector3.forward * speed;
             }
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 }

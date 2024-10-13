@@ -9,9 +9,13 @@ public class Objects : MonoBehaviour
     public float rotationSpeed = 2f;
     public float lifeTime = 30f;
 
+    public AudioClip SpawnSound;
+
     private void Start()
     {
         Destroy(gameObject,lifeTime);
+        AudioManager.instance.PlaySFX(SpawnSound);
+
     }
 
     void Update()

@@ -128,3 +128,4 @@ MonoBehaviour:
   type: 3
   rotationSpeed: 0
   lifeTime: 90
+  SpawnSound: {fileID: 8300000, guid: 7cb384853b55d9d4d81641c9e92032a0, type: 3}

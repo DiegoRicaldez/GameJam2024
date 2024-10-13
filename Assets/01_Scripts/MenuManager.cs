@@ -10,14 +10,24 @@ public class MenuManager : MonoBehaviour
     public string Win = "Win";
     public string GameOver = "GameOver";
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name != Juego)
+        {
+            Debug.Log("parado");
+            AudioManager.instance.StopMusic();
+        }
+    }
 
     public void GoMainScene()
     {
         SceneManager.LoadScene(MainScene);
+
     }
     public void GoJuegoScene()
     {
         SceneManager.LoadScene(Juego);
+
     }
     public void GoWinScene()
     {

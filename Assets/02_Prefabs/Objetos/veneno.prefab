@@ -114,6 +114,7 @@ MonoBehaviour:
   type: 2
   rotationSpeed: 45
   lifeTime: 30
+  SpawnSound: {fileID: 8300000, guid: 7cb384853b55d9d4d81641c9e92032a0, type: 3}
 --- !u!54 &8228004287160310242
 Rigidbody:
   m_ObjectHideFlags: 0
