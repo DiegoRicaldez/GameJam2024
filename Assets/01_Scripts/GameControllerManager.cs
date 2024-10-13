@@ -44,6 +44,7 @@ public class GameControllerManager : MonoBehaviour
     public void AddPoint()
     {
         points += 1;
+        Debug.Log(points);
         if (points < TotalPoints)
         {
             pointsBar.fillAmount = points / TotalPoints;
