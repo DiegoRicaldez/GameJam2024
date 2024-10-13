@@ -15,10 +15,12 @@ public class Player : MonoBehaviour
 	public Animator animator;
 
 	private PathGenerator pathGenerator;
+    private GameControllerManager gcm;
     
     void Start()
     {
         pathGenerator = FindObjectOfType<PathGenerator>();
+        gcm = FindAnyObjectByType<GameControllerManager>();
         life = maxLife;
     }
 
@@ -102,10 +104,13 @@ public class Player : MonoBehaviour
     {
         life -= amount;
 
-        if ( life <= 0 )
-        {
-            //GameOver
+        if (life > maxLife) life = maxLife;
+        if (life < 0) life = 0;
 
+        gcm.ChangeLife(life, maxLife);
+
+        if ( life == 0 )
+        {
             animator.SetBool("isDead",true);
         }
     }
@@ -142,14 +147,17 @@ public class Player : MonoBehaviour
                 {
                     case ObjectType.cheese:
                         ChangeOrientation();
+                        TakeDamage(1);
+                        gcm.ChangeCordureImage(true);
                         break;
                     case ObjectType.chili:
                         ResetOrientation();
-                        TakeDamage(1);
+                        gcm.ChangeCordureImage(false);
+                        speed += speedIncrease;
                         break;
                     case ObjectType.poison:
                         TakeDamage(-1);
-                        speed += speedIncrease;
+                        gcm.AddPoint();
                         break;
 
                     default:

@@ -12,18 +12,14 @@ public class ObjectGenerator : MonoBehaviour
     public float SpawnTime = 5f;
     public float Spawndecrease = 0.2f;
     public int decreaseAmount = 20;
-    private int secondDecreaseAmount;
+    public float secondSpawnTime = 1.5f;
+    public int secondDecreaseAmount = 50;
 
     private float timer = 0f;
     private int amount = 0;
     private int secondAmount = 0;
 
     public bool canSpawn = false;
-
-    void Start()
-    {
-        secondDecreaseAmount = decreaseAmount / 4;
-    }
 
     void Update()
     {
@@ -46,7 +42,7 @@ public class ObjectGenerator : MonoBehaviour
 
                 if (amount >= decreaseAmount)
                 {
-                    if (SpawnTime > 1)
+                    if (SpawnTime > secondSpawnTime)
                     {
                         SpawnTime -= Spawndecrease;
                     }
