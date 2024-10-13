@@ -308,17 +308,17 @@ MonoBehaviour:
   objectsPrefabs:
   - {fileID: 724651643155412485, guid: 3c65b9f7571631e41b95bec92500f7a3, type: 3}
   - {fileID: 724651643155412485, guid: 3c65b9f7571631e41b95bec92500f7a3, type: 3}
-  - {fileID: 724651643155412485, guid: 3c65b9f7571631e41b95bec92500f7a3, type: 3}
+  - {fileID: 724651643155412485, guid: 017001e5e7e1fd34195ef3750b7efa60, type: 3}
   - {fileID: 8710596560868387266, guid: 0c932f2fe1a0d2542b73b61847e8f98a, type: 3}
   - {fileID: 6343740885343635143, guid: 14db3ccc1d3d31645959455e7e105b31, type: 3}
   - {fileID: -2694539342693747293, guid: ed41ffd5e17c5814f8b90d31d03fda39, type: 3}
   - {fileID: -2694539342693747293, guid: aff7b5b8bc8eee846b1f52cdf8aa6067, type: 3}
   BottomLeft: {fileID: 125242403}
   TopRight: {fileID: 15605361}
-  SpawnTime: 5
+  SpawnTime: 1
   Spawndecrease: 0.2
-  decreaseAmount: 20
-  secondSpawnTime: 1.5
+  decreaseAmount: 25
+  secondSpawnTime: 0.4
   secondDecreaseAmount: 80
   canSpawn: 0
 --- !u!1 &220873213
